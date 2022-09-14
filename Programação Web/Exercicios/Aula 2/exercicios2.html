@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario</title>
+        <meta charset="utf-8">
+        <style>
+            .form{
+                margin: 50px auto;
+                width: 500px;
+                background-color: #8B4512;
+                border: 1px solid black;
+                padding: 20px;
+                border-radius: 10px;
+                color: white;
+            }
+            form{
+                padding: 40px;
+                width: 50%;
+
+            }
+            .info{
+                text-align: center;
+                font-weight: 900;
+
+                border-bottom: 3px;
+                border-top: 0px;
+                border-left: 0px;
+                border-right: 0px;
+
+                border-color: black;
+                border-style: solid;
+            }
+
+            .content{
+                margin-bottom: 20px;
+                position: relative;
+            }
+            .labelRotulos{
+                width: 150px;
+                padding: 5px;
+                font-weight: 900;
+            }
+
+            input[type=text],input[type=email],select,textarea{
+                position: absolute;
+                background-color: #F5DEB4;
+                border: 1px solid black;
+                border-radius: 5px;
+                top:0px;
+                left:100px;
+                box-shadow: 2px 2px rgb(65, 64, 64);
+            }
+
+            input[type=text],input[type=email],select{
+                width: 300px;
+                height: 30px;
+            }
+            textarea{
+                width: 300px;
+                height: 60px;
+            }
+            
+            input[type=submit]{
+                position: absolute;
+                background-color: black;
+                color:white;
+                width: 80px;
+                left:100px;
+                top:15px;
+                border-radius: 5px;
+            }
+            .submit{
+                position: relative;
+                margin-top: 30px;
+            }
+            
+            span{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form">
+            <div class="info">
+                <h1>Formulário de Contato</h1>
+                <p>Preencha todos os campos com <span>*</span> </p>
+            </div>
+
+            <form>
+
+                <div class="content">
+                    <div class="labelRotulos">
+                        <label for="cName">Nome: <span>*</span></label>
+                    </div>
+                    <input type="text" id="cName" placeholder="Nome Completo" autofocus><br>
+                </div>
+
+                <div class="content"> 
+                    <div class="labelRotulos">
+                        <label for="cEmail">E-mail: <span>*</span></label>
+                    </div>
+                    
+                    <input type="email" id="cEmail" placeholder="E-mail Válido" required><br>
+                </div>
+
+                <div class="content">
+                    <div class="labelRotulos">
+                        <label for="cAssunto">Assunto: <span>*</span></label>
+                    </div>
+        
+                    <select>
+                        <option value=""></option>
+                        <option value="Duvidas do Produto">Dúvidas do Produto</option>
+                        <option value="Atraso na Entrega">Atraso na Entrega</option>
+                        <option value=""></option>
+                    </select><br>
+                </div>
+
+                <div class="content">
+                    <div class="labelRotulos">
+                        <label for="cEmail">Mensagem: <span>*</span></label>
+                    </div>
+                    
+                    <textarea placeholder="Sua mensagem"></textarea><br>
+                </div>           
+
+                <div class="submit">
+                    <input type="submit" value="Enviar">
+                </div>
+
+            </form>
+        <div>
+    </body>
+</html>
