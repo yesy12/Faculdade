@@ -1,0 +1,139 @@
+Algoritmo exercicio inicio
+
+Inicio
+
+    real raio, area;
+
+    escreva("Exercicio da Aula - Calculo da área de um círculo");
+
+    escreva("Escreva o raio: ");
+    raio = leia();
+
+    area = 3.14 * raio*raio;
+
+    escreva("A área total é " +area + " para o raio de " + raio);
+
+FIM
+
+------------------------------------------------
+
+Algoritmo exercicio 1
+
+Inicio
+
+    inteiro n1, n2, n3, media;
+
+    escreva("Exercicio 1 - Escreva 3 Numeros e calcule a média entre eles");
+
+    escreva("Escreva o primeiro número: ");
+    n1 = leia();
+
+    escreva("Escreva o segundo número: ");
+    n2 = leia();
+
+    escreva("escreva o terceiro número: ");
+    n3 = leia();
+
+    media = (n1+n2+n3)/3
+
+    escreva(f"O Primeiro Número é: " +n1);
+    escreva(f"O Segundo Número é: " +n2);
+    escreva(f"O Terceiro Número é: " +n3);
+    escreva(f"A média é: " +media);
+
+FIM
+------------------------------------------------
+
+Algoritmo exercicio 2
+
+Inicio
+
+    real n1, valor;
+
+    escreva("Exercicio 2 - Escreva um valor e tenha o seu triplo");
+
+    escreva("Escreva o primeiro número: ");
+    n1 = leia();
+
+    valor = n1 * 3;
+
+    escreva(f"O Valor digitado é: " +n1);
+    escreva(f"O seu triplo é: " + valor);
+
+FIM
+
+------------------------------------------------
+
+Algoritmo exercicio 3
+
+Inicio
+
+    inteiro base, altura, area;
+
+    escreva("Exercicio 3 - Escreva 2 valores para calcular a área do triangulo");
+
+    escreva("Escreva a base do triangulo: ");
+    base = leia();
+
+    escreva("Escreva a altura do triangulo: ");
+    altura = leia();
+
+    area = (base * altura) / 2;
+
+    escreva(f"A base do triangulo é: " +base);
+    escreva(f"A altura do triangulo é:: " + altura);
+    escreva(f"O valor da área do triangulo é: " + area);
+
+FIM
+
+------------------------------------------------
+
+Algoritmo exercicio 4
+
+Inicio
+
+    inteiro hora, minutos, minutos_totais;
+
+    escreva("Exercicio 4 - Conversor de Horas em minutos");
+
+    escreva("Digite a hora para converter em minutos: ");
+    hora = leia();
+
+    escreva("Digite os minutos para somar os minutos: ");
+    minutos = leia();
+
+    minutos_totais = (hora*60) + minutos;
+
+    escreva(hora+ " horas +" + minutos + " minutos,dão " + minutos_totais +" minutos");
+
+FIM
+
+------------------------------------------------
+Algoritmo exercicio 5
+
+Inicio
+
+    inteiro n1, n2, n3, operacao, resultado;
+    texto valor, valor_3_algarismo;
+
+    escreva("Exercicio 5 - Transforme 3 números em 4 números");
+
+    escreva("Escreva o primeiro número: ");
+    n1 = leia();
+
+    escreva("Escreva o segundo número: ");
+    n2 = leia();
+
+    escreva("escreva o terceiro número: ");
+    n3 = leia();
+
+    operacao = (n1 + n2) * 2 + (n3*6);
+    resultado = operacao % 9;
+
+    valor_3_algarismo = conversao_texto (n1 + n2 + n3);
+    valor = conversao_texto (n1 + n2 + n3 + resultado);
+
+    escreva("O valor de 3 números foi: " +valor_3_algarismo);
+    escreva("O valor de 4 números é: " +valor);
+
+FIM
