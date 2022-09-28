@@ -1,0 +1,120 @@
+inicio
+    //Exercicio 3 Notas e apenas 1 maior
+    inteiro nota_maior, n1, n2, n3;
+    texto nota_maior_mensagem;
+
+    escreva("Digite a primeira nota: ");
+    n1 = leia;
+    nota_maior = n1;
+    nota_maior_mensagem = "primeira nota";
+
+    escreva("Digite a segunda nota: ");
+    n2 = leia;
+    se(n2 > nota_maior)
+    inicio
+        nota_maior = n2;
+        nota_maior_mensagem = "segunda nota";
+    fim
+    	
+    	escreva("Digite a terceira nota: ");
+    n3 = leia;
+    se(n3 > nota_maior)
+    inicio
+        nota_maior = n3;
+        nota_maior_mensagem = "terceira nota";
+    fim
+
+    escreva(`A maior nota foi ${nota_maior}, sendo digitada na {nota_maior_mensagem}`);
+
+fim
+
+//-------------
+
+inicio
+    //Exercicio com 4 Notas,  1 maior e 1 menor
+    inteiro nota_maior, n1, n2, n3,n4;
+    texto nota_maior_mensagem, nota_menor_mensagem;
+
+
+    escreva("Digite a primeira nota: ");
+    n1 = leia;
+    nota_maior = n1;
+    nota_menor = n1;
+    nota_maior_mensagem = "primeira nota";
+    nota_menor_mensagem = "primeira nota";
+    
+
+    escreva("Digite a segunda nota: ");
+    n2 = leia;
+    se(n2 > nota_maior)
+    inicio
+        nota_maior = n2;
+        nota_maior_mensagem = "segunda nota";
+    fim
+    entao se (n2 < nota_menor)
+    inicio
+        nota_menor = n2;
+        nota_menor_mensagem = "segunda nota";
+    fim
+    	
+    escreva("Digite a terceira nota: ");
+    n3 = leia;
+    se(n3 > nota_maior)
+    inicio
+        nota_maior = n3;
+        nota_maior_mensagem = "terceira nota";
+    fim
+    entao se (n3 < nota_menor)
+    inicio
+        nota_menor = n3;
+        nota_menor_mensagem = "terceira nota";
+    fim
+
+    escreva("Digite a quarta nota: ");
+    n4 = leia;
+    se(n4 > nota_maior)
+    inicio
+        nota_maior = n4;
+        nota_maior_mensagem = "quarta nota";
+    fim
+    entao se (n4 < nota_menor)
+    inicio
+        nota_menor = n4;
+        nota_menor_mensagem = "quarta nota";
+    fim
+
+    escreva(`A maior nota foi ${nota_maior}, sendo digitada na {nota_maior_mensagem}`);
+    escreva(`A menor nota foi ${nota_menor}, sendo digitada na {nota_menor_mensagem}`);
+
+fim
+
+//---------------
+
+inicio
+    //Exercícios Triângulos 
+    inteiro ladoA, ladoB, ladoC;
+    
+    escreva("Digite o primeiro lado: ");
+    ladoA = leia;
+    
+    escreva("Digite o segundo lado: ");
+    ladoB = leia;
+    
+    escreva("Digite o terceiro lado: ");
+    ladoC= leia;
+    
+    se (ladoA == ladoB e ladoB == ladoC)
+    inicio
+        escreva("Triângulo é equilátero");
+    fim
+    entao se (ladoA != ladoB e ladoB != ladoC e ladoA != ladoC)
+    inicio
+        escreva("Triângulo é escaleno");
+    fim
+    entao
+    inicio
+        nota_menor
+        escreva("Triângulo é isósceles");
+    fim
+
+fim

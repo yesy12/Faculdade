@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Aula 04 - Exercicio 2</title>
+    </head>
+    <body>
+        Número: <input type="text" id="digite"><br>
+        Valor: <input type="text" id="recebimento" disabled><br>
+    
+        <input type="button" id="Calcular" value="Calcule">
+        
+        <script>
+            let digite = document.getElementById("digite");
+            let recebimento = document.getElementById("recebimento");
+            let btn = document.getElementById("Calcular");
+            
+            btn.addEventListener("click",()=>{
+                if(digite.value % 2 == 0){
+                    recebimento.value = `${digite.value} Ele é par`;
+                }
+                else{
+                    recebimento.value   = `${digite.value} Ele é impar`;
+                }
+            })
+
+        </script>
+    </body>
+</html>
