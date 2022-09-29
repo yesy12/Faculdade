@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercicio 5</title>
+        <style>
+            input[type=text], input[type=number],p{
+                margin-bottom: 10px;
+            }
+            input[type=submit]{
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Média</p>
+        <form method="post">
+            <div>
+                <label for="nota1">Nota 1</label>
+                <input type="number" id="nota1" placeholder="Digite a primeira nota" ><br>
+            </div>
+            
+            <div>
+                <label for="nota2">Nota 2</label>
+                <input type="number" id="nota2" placeholder="Digite a segunda nota"><br>
+            </div>
+
+            <div>
+                <label for="nota3">Nota 3</label>
+                <input type="number" id="nota3" placeholder="Digite a terceira nota"><br>
+            </div>
+            
+            <div>
+                <label>Media</label>
+                <input type="text" id="mediaInput" disabled><br>
+            </div>
+            <div>
+                <label>Situação</label>
+                <input type="text" id="situacao" disabled><br>
+            </div>
+
+            <input type="button" id="calcular" value="Calcular">
+        </form>
+        <script>
+            situacao = document.getElementById("situacao");
+            calcular = document.getElementById("calcular");
+            mediaInput = document.getElementById("mediaInput");
+            let media = 0;
+
+            calcular.addEventListener("click",()=>{
+                nota1 = parseInt(document.getElementById("nota1").value);
+                nota2 = parseInt(document.getElementById("nota2").value);
+                nota3 = parseInt(document.getElementById("nota3").value);
+                
+
+                media = (nota1+nota2+nota3)/3;
+
+                if(media >= 6){
+                    mediaInput.value = media;
+                    situacao.value = `Aprovado`;
+                } 
+                else if(media >= 3 && media < 6){
+                    mediaInput.value = media;
+                    situacao.value = `Exame`; 
+                }
+                else{
+                    mediaInput.value = media;
+                    situacao.value = `Reprovado`;
+                }
+                
+
+                result.value = `A área é de: ${area} m^2`;
+            })
+             
+        </script>
+    </body>
+</html>

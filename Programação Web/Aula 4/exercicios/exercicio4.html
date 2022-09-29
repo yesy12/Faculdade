@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercicio 4</title>
+        <style>
+            input[type=text], input[type=number],p{
+                margin-bottom: 10px;
+            }
+            input[type=submit]{
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Área do Retângulo</p>
+        <form method="post">
+            <div>
+                <label for="number1">Base</label>
+                <input type="number" id="number1" placeholder="Digite a base" ><br>
+            </div>
+            
+            <div>
+                <label for="number2">Altura</label>
+                <input type="number" id="number2" placeholder="Digite a altura"><br>
+            </div>
+            
+            <div>
+                <label>Resultado</label>
+                <input type="text" id="result" disabled><br>
+            </div>
+
+            <input type="button" id="calcular" value="Calcular">
+        </form>
+        <script>
+            result = document.getElementById("result");
+            calcular = document.getElementById("calcular");
+            let area = 0;
+
+            calcular.addEventListener("click",()=>{
+                number1 = parseInt(document.getElementById("number1").value);
+                number2 = parseInt(document.getElementById("number2").value);
+                area = number1*number2;
+
+                result.value = `A área é de: ${area} m^2`;
+            })
+             
+        </script>
+    </body>
+</html>

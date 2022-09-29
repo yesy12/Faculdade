@@ -1,0 +1,77 @@
+----------------------------------------
+Algoritmo exemplo 1
+
+inicio
+    real numero1, numero2, resultado;
+    string opcao, mensagem;
+
+    escreva("digite o primeiro nota: ")
+    numero1 = leia;
+
+    escreva("digite o segundo nota: ")
+    numero2 = leia;
+
+    escreva("Digite 'A' para média aritmética e 'P' para média ponderada");
+    escreva("digite a opcao para a média para os 2 números: ")
+    opcao = leia;
+
+    escolha(opcao)
+    inicio
+        caso "a":
+            resultado = (numero1+numero2)/2;
+            mensagem = "A média aritmética é igual a "+resultado;
+            break;
+        caso "p":
+            resultado = ( (numero1*3) + (numero2*7) )/(3+7);
+            mensagem = "A média aritmética é igual a "+resultado;
+            break;            
+        padrao:
+            escolha("Valor Inválido");
+            break;    
+    fim
+
+    escreva(mensagem);
+fim
+
+
+----------------------------------------
+Algoritmo exemplo 2
+
+inicio
+    real numero1, numero2, resultado;
+    texto operacao;
+
+    escreva("digite o primeiro número: ")
+    numero1 = leia;
+
+    escreva("digite o segundo número: ")
+    numero2 = leia;
+
+    escreva("As operações permitidas são / * + - %");
+    escreva("digite a operação com para os 2 números: ")
+    operacao = leia;
+
+    escolha(operacao)
+    inicio
+        caso "/":
+            resultado = numero1 / numero2;
+            break;
+        caso "*":
+            resultado = numero1 * numero2;
+            break;
+        caso "-":
+            resultado = numero1 - numero2;
+            break;
+        caso "+":
+            resultado = numero1 + numero2;
+            bre1ak;                                    
+        caso "%":
+            resultado = numero1 % numero2;
+            break;
+        padrao:
+            escreva("Valor Inválido");        
+            break;
+    fim
+
+    escreva("O resultado da conta entre: "+numero1 +" e " +numero2+ " com o operador: " +operador +" é igual a: "resultado);
+fim
