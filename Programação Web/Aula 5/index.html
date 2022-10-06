@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Aula 05 - Exemplo 1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        textarea{
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="min">Min</label>
+            <input type="text" id="min" placeholder="Digite o minimo">
+        </div>
+
+        <div>
+            <label for="max">Max</label>
+            <input type="text" id="max" placeholder="Digite o maximo">
+        </div>
+
+        <input type="button" id="button" value="Adicionar Número aleatório"><br>
+        <textarea id="resultado" disabled></textarea>
+    </form>
+</body>
+<script>
+    window.onload = ()=>{
+        aleatorio = document.getElementById("button");
+        result = document.getElementById("resultado");
+        
+        aleatorio.addEventListener("click",()=>{
+            min = parseInt(document.getElementById("min").value);
+            max = parseInt(document.getElementById("max").value);
+            let x;
+
+            x = Math.floor(Math.random()*max)+min;
+            result.innerHTML = `${result.value}${x}\n`;
+        })
+        
+    
+    }
+</script>
+</html>
