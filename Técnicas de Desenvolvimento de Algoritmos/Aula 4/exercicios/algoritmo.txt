@@ -1,0 +1,84 @@
+----------------------------------------
+Algoritmo exercicio 9
+
+inicio
+    real media;
+    inteiro contador, quantidade = 0, valor;
+
+    para(contador = 1; contador < 11; contador++){
+        escreva("Digite a quantidade de inimigos mortos na fase " +contador +":");
+        valor = leia;
+
+        quantidade += leia;
+    }
+
+    media = (real) quantidade/10;
+
+    escreva("A média de inimigos mortos foi: "+media);
+
+fim
+----------------------------------------
+
+Algoritmo exercicio 10
+
+inicio
+    real media;
+    inteiro contadorFase = 1; quantidade = 0; valor, resultadoParaSair;
+    boleano resultado = false;
+
+    enquanto(resultado == false){
+
+        escreva("Digite a quantidade de inimigos mortos na fase " +contadorFase +":");
+        valor = leia;
+
+        quantidade += leia;
+
+        escreva("Você gostaria de sair?");
+        escreva("Digite 1 para Sim, e Qualquer coisa para não: ");
+        resultadoParaSair = leia;
+
+        se(resultadoParaSair == 1){
+            resultado = true;
+        }
+        senao{
+            contadorFase += 1;
+        }
+
+
+    }
+    
+    media (real)/ quantidade/contadorFase;
+    escreva("A média é de: "+media);
+
+
+fim
+----------------------------------------
+
+Algoritmo exercicio 10
+
+inicio
+    inteiro valorSorteado, valorEntrada=0;
+
+    importa Math;
+
+    valorSorteado = Math.random() *100;
+
+    enquanto(valorSorteado != valorEntrada){
+        escreva("Digite um número entre 0 e 100:");
+        valorEntrada = leia;
+
+        se (valorEntrada > valorSorteado){
+            escreva("O valor é menor");
+        }
+        senao( valorSorteado > valorEntrada){
+            escreva("O valor é maior");
+        }
+        senao{
+            escreva("O valor é identico");
+        }
+
+    }
+
+
+fim
+----------------------------------------
