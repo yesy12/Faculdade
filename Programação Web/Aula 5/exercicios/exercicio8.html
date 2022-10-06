@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercicio 8</title>
+        <meta charset="utf-8">
+        <style>
+            div{
+                margin-bottom: 10px;
+            }
+            input[type=text]{
+                width: 200px;
+            }
+            #irpf{
+                width: 300px;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <div>
+                <label>Registro:</label>
+                <input type="text" value="" id="registro" placeholder="Digite o registro">
+            </div>
+
+            <div>
+                <label>Nome:</label>
+                <input type="text" value="" id="nome" placeholder="Digite o seu nome">
+            </div>
+
+            <div>
+                <label>Salário</label>
+                <input type="text" value="" id="salario" placeholder="Digite o seu salario">
+            </div>
+
+            <div>
+                <input type="button" id="calcular" value="Calcular IR">
+            </div>
+
+            <div>
+                <label>Imposto de Renda</label>
+                <input type="text" disabled id="irpf">
+            </div>
+        </form>
+    </body>
+    <script>
+        window.onload = () =>{
+            let irpf = document.getElementById("irpf");
+            let calcular = document.getElementById("calcular");
+            let registro;
+            let nome;
+            let salario;
+            let aliquota;
+            let imposto;
+
+            calcular.addEventListener("click",()=>{
+                registro = document.getElementById("registro");
+                nome = document.getElementById("nome").value;
+                salario = document.getElementById("salario").value;
+
+                if(salario < 1434){
+                    aliquota = 0;
+                }
+                else if(salario >= 1434 && salario < 2150){
+                    aliquota = 0.075;
+                }
+                else if(salario >= 2150 && salario < 2866){
+                    aliquota = 0.15;
+                }               
+                else if(salario >= 2866 && salario < 3582){
+                    aliquota = 0.225;
+                }
+                else{
+                    aliquota = 0.275;
+                }
+            
+                imposto = salario * aliquota;
+                
+                irpf.value = `${nome},O valor pago será de R$ ${imposto}: Aliquota de ${aliquota*100}%`;
+            })
+        }
+    </script>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercicio 7</title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            p{
+                font-weight: 900;
+            }
+            input[type=number],select{
+                width: 150px;
+            }
+            input[type=button]{
+                padding: 05px;
+            }
+            table{
+                background-color: #F3F8FB;
+                width: 100%;
+                padding: 10px;
+                font-size: 24pt;
+            }
+            td{
+                padding: 5px;
+                text-align: center;
+                border-top: 1px solid white;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Calculo de Imc</p><br>
+        <form>
+            <div>
+                <label>Altura</label>
+                <input type="number" placeholder="Digite sua altura em cm" id="altura" >
+            </div><br>
+
+            <div>
+                <label>Peso </label>
+                <input type="number" placeholder="Digite o seu peso em kg" id="peso" >
+            </div><br>
+
+            <div>
+                <label>Sexo</label>
+                <select id="sexo">
+                    <option></option>
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                </select>
+            </div><br>
+            <div>
+                <input type="button" id="calcular" value ="Calcular">
+            </div>
+        </form><br>
+        <table>
+            <thead>
+                <th>Condição</th>
+                <th>IMC</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="condicaoTable">Situação</td>
+                    <td id="imcTable">0.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    <script>
+        window.onload = () =>{
+            let altura;
+            let peso;
+            let sexo;
+            let imc = 0;
+            let condicao;
+            let calcular = document.getElementById("calcular");
+            let imcTable = document.getElementById("imcTable");
+            let condicaoTable = document.getElementById("condicaoTable");
+
+            calcular.addEventListener("click",()=>{
+                altura = document.getElementById("altura").value/100;
+                peso = document.getElementById("peso").value;
+                sexo = document.getElementById("sexo").value;
+                imc = peso/(altura*altura);
+
+                if(sexo == "F"){
+                    if(imc < 19.1){
+                        condicao = "Abaixo do Peso";
+                    }
+                    else  if(imc >= 19.1 && imc < 25.8){
+                        condicao = "Peso Normal";
+                    }
+                    else if(imc >= 25.8 && imc < 27.3){
+                        condicao = "Pouco Acima do Peso";
+                    }
+                    else if(imc >= 27.3 && imc < 32.3){
+                        condicao = "Acima do Peso Ideal";
+                    }
+                    else if(imc > 32.3){
+                        condicao = "Obeso";
+                    }
+                }
+                else if(sexo == "M"){
+                    if(imc < 20.7){
+                        condicao = "Abaixo do Peso";
+                    }
+                    else  if(imc >= 20.7 && imc < 26.4){
+                        condicao = "Peso Normal";
+                    }
+                    else if(imc >= 26.4 && imc < 27.8){
+                        condicao = "Pouco Acima do Peso";
+                    }
+                    else if(imc >= 27.8 && imc < 31.1){
+                        condicao = "Acima do Peso Ideal";
+                    }
+                    else if(imc > 31.1){
+                        condicao = "Obeso";
+                    }
+                }
+
+                imcTable.innerHTML = imc.toFixed(2);
+                condicaoTable.innerHTML = condicao;
+
+
+            })
+            
+
+        }
+    </script>
+</html>
