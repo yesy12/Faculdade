@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Exemplo 2</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    primo = 0;
+    
+    valor = Number(prompt("Digite um número: "))
+
+    //resposta 2
+    for(let i = 2; i< valor; i++){
+        if(valor % i  == 0){
+           primo = 1; 
+        }
+    }
+
+
+    if(primo == 0){
+        document.write(`O valor: {${valor}} é primo`)
+    }
+    else{
+        document.write(`O valor: {${valor}} não é primo`)
+    }
+</script>

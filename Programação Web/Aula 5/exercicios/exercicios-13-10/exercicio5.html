@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+    <style>
+        form{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .resultados{
+            width: 500px;
+            height: 500px;            
+            margin-top: 5px;
+            box-shadow: 3px 3px black;
+            background-color: #FFCC33;
+        }
+        input#cronometro,input#slideShow,input#tabuada{
+            background-color: #b8e723;
+            border-radius: 10px;
+        }
+        .disable{
+            display: none;
+        }
+        .enable{
+            visibility: visible;
+        }        
+
+        #tabuadaDiv div, #cronometroResultadoDiv,#fotosDiv{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div id="inputs">
+            <input type="button" value="Cronômetro" id="cronometro">
+            <input type="button" value="Slide Show" id="slideShow">
+            <input type="button" value="Tabuada" id="tabuada">
+        </div>
+
+        <div class="resultados">
+            <div id="cronometroResultadoDiv" class="disable"> </div>
+
+            <div id="fotosDiv" class="disable">
+                <img src="imagens/image1.jpg" width="50" height="50" id="imagem">
+                <p id="fotoValor">Foto Nº1</p>
+                <input type="button" value="Foto Anterior" id="buttonAnterior">
+                <input type="button" value="Próxima Foto" id="buttonProxima">
+            </div>
+            
+            <div id="tabuadaDiv" class="disable">
+                <div>
+                    <p>Digite um valor para calcular a tabuada</p>
+                    <input type="number" id="tabudaInput" value="">
+                    <input type="button" id="calcularTabuda" value="Calcular">
+                </div>
+                <div id="resultadoTabuada"></div>
+            </div>
+
+        </div>
+
+
+    </form>
+</body>
+</html>
+<script>
+    
+    window.onload = () =>{
+        //Valores Gerais
+        let seconds = 0;
+        
+        let cronometroClickBoolean = false;
+        let tabuadaClickBoolean = false;
+        let slideShowClickBoolean = false;
+    
+        let indice = 1;
+        
+        let resultados = document.getElementsByClassName("resultados")[0];
+        
+        //cronometro
+        let cronometro = document.getElementById("cronometro");
+        let cronometroResultadoDiv = document.getElementById("cronometroResultadoDiv");
+
+        //tabuada
+        let tabuada = document.getElementById("tabuada");
+        let tabuadaDiv = document.getElementById("tabuadaDiv");
+
+        let tabudaResultados = document.getElementById("resultadoTabuada");
+        let tabuadaButtonCalcular = document.getElementById("calcularTabuda");
+
+        let tabudaInput;
+        let mensagem = "";
+
+        //imagens
+        let imagem = document.getElementById("imagem");
+        let buttonAnterior = document.getElementById("buttonAnterior");
+        let buttonProxima = document.getElementById("buttonProxima");
+
+        let slideShow = document.getElementById("slideShow");
+        let fotos =  document.getElementById("fotosDiv");
+        let fotosNumber = document.getElementById("fotoValor");
+
+
+        //Cronometro
+        cronometro.addEventListener("click",()=>{
+            cronometroClickBoolean = !cronometroClickBoolean;
+            tabuadaClickBoolean = false;
+            slideShowClickBoolean = false;
+
+            abaOptions(fotos,slideShowClickBoolean)
+            abaOptions(cronometroResultadoDiv, cronometroClickBoolean);
+            abaOptions(tabuadaDiv,tabuadaClickBoolean);
+
+            trocarBackground("#FFCC33");
+        })
+
+
+        //Tabuada
+        tabuada.addEventListener("click",()=>{
+            cronometroClickBoolean = false;
+            tabuadaClickBoolean = !tabuadaClickBoolean;
+            slideShowClickBoolean = false;
+
+            abaOptions(fotos,slideShowClickBoolean)
+            abaOptions(cronometroResultadoDiv, cronometroClickBoolean);
+            abaOptions(tabuadaDiv,tabuadaClickBoolean);
+            
+            trocarBackground("#66CDCC");
+        })
+
+        tabuadaButtonCalcular.addEventListener("click",()=>{
+            tabudaInput = document.getElementById("tabudaInput").value;
+            
+            for(let i = 1; i < 11; i++){
+                mensagem += `${tabudaInput}x${i}=${tabudaInput*i}<br>`;
+            }
+            tabudaResultados.innerHTML = mensagem;
+            mensagem = "";
+        });
+
+        //Fotos
+        slideShow.addEventListener("click",()=>{
+            cronometroClickBoolean = false;
+            tabuadaClickBoolean = false;
+            slideShowClickBoolean = !slideShowClickBoolean;
+
+            abaOptions(fotos,slideShowClickBoolean)
+            abaOptions(cronometroResultadoDiv, cronometroClickBoolean);
+            abaOptions(tabuadaDiv,tabuadaClickBoolean);
+
+            trocarBackground("#CCFF9A");
+        })
+
+        buttonAnterior.addEventListener("click",()=>{
+            if(indice == 1){
+                return;
+            }
+            indice -= 1;
+            trocarImagem();
+        })
+
+        buttonProxima.addEventListener("click",()=>{
+            if(indice == 5){
+                return ;
+            }
+            indice += 1;
+            trocarImagem();
+        })
+
+        setInterval(adicionarSegundos,1000);
+
+        function adicionarSegundos(){
+            seconds += 1;
+            cronometroResultadoDiv.innerHTML = seconds;
+        }
+    
+        function abaOptions(elemento, variavelBooleana){
+            if(variavelBooleana){
+                elemento.classList.remove("disable");
+                elemento.classList.add("enable");
+            }
+            else{
+                elemento.classList.remove("enable");
+                elemento.classList.add("disable");
+            }
+        }
+    
+        function trocarImagem(){
+            imagem.src = `imagens/image${indice}.jpg`;
+            fotosNumber.innerHTML = `Foto Nº ${indice}`;
+        }
+    
+        function trocarBackground(valor){
+            resultados.style.backgroundColor = valor;
+        }
+    }
+    
+
+</script>

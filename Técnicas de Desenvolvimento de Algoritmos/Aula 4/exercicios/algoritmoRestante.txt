@@ -1,0 +1,124 @@
+----------------------------------------
+Algoritmo exercicio Slide 18
+
+inicio
+    real soma;
+    inteiro valorN, contador;
+
+    escreva("Digite um valor Positivo: ");
+    valorN = leia;
+
+    se(valor > 0){
+        para(contador = 1; contador < valorN; contador++ ){
+            soma += (1/contador);
+        }
+        escreva("O numero é: "+soma);
+    }
+    senao{
+        escreva("Valor Invalido");
+    }
+
+
+fim
+
+----------------------------------------
+Algoritmo exercicio Slide 20
+
+importe Math;
+
+inicio
+    inteiro valorN, random = -1, tentativas = 0;
+
+    escreva("Digite um valor: ");
+    valorN = leia;
+
+    enquanto(valorN != random){
+        random = Math.random() * 101;
+        tentativas += 1;
+
+        se(random > valorN){
+            escreva("O computador errou, ele falou um numero maior");
+        }
+        senao(random < valorN){
+            escreva("O computador errou, ele falou um numero menor");
+        }        
+        else{
+            escreva("O computador acertou, depois de: "+tentativas+" tentativas");
+        }
+    }
+
+
+fim
+
+----------------------------------------
+Algoritmo exercicio Slide 21
+
+inicio
+    inteiro valorN, contadorI, contadorJ;
+
+    escreva("Digite um número: ");
+    valorN = leia;
+
+    para(contadorI = valorN; contadorI > 0; contadorI--){
+        para(contadorJ = contadorI; contadorJ > 0; contadorJ--){
+            escreva("*");
+        }
+        escreva("\n");
+    }
+
+fim
+
+----------------------------------------
+Algoritmo exercicio Slide 23
+
+importe Math;
+
+inicio
+    booleana resultado = false;
+    inteiro partida, dado1, dado2, soma, ponto;
+
+    enquanto(perdeu == false){
+        dado1 = Math.random()*7;
+        dado2 = Math.random()*7;
+        soma = dado1 + dado2;
+
+        escreva("A soma dos dados deu: "+soma);
+
+        se(partida == 1){
+            escreva("Vamos Jogar");
+
+            se(soma == 7 || soma == 11){
+                resultado = true;
+                escreva("Você ganhou o jogo");
+            }
+            senao(soma == 2 || soma == 3 || soma == 12){
+                resultado = true;
+                escreva("Você perdeu o jogo");
+            }
+            senao{
+                ponto = soma;
+                escreva("Deu ponto");
+            }
+
+        }
+        senao{
+            escreva("Vamos Jogar DeNovo");
+
+            se(soma == 7){
+                resultado = true;
+                escreva("Você perdeu o jogo");
+            }
+            senao(soma == ponto){
+                resultado = true;
+                escreva("Você ganhou o jogo");
+            }
+            senao{
+                escreva("Ainda não aconteceu nada");
+            }
+
+        }
+
+        partida += 1;
+    }
+
+fim

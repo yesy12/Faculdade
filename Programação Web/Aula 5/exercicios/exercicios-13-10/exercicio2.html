@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+    <style>
+        table,tbody,tr,td{
+            border: none;
+        }
+        tbody tr td{
+            color: black;
+            padding: 10px;
+            margin: 0px;
+        }
+        .green{
+            background-color:green;
+        }
+        .yellow{
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    window.onload = () =>{
+        let mensagem = "";
+        let tbody = document.getElementsByTagName("tbody")[0];
+
+        let linhas = Number(prompt("Digite a quantidade de linhas: "));
+        let colunas = Number(prompt("Digite a quantidade de colunas: "));
+        
+
+
+        for(let linha = 1; linha <= linhas; linha++){
+            mensagem += "<tr>";
+            for(let coluna = 1; coluna <= colunas; coluna++){
+                if(coluna % 2 == 0){
+                    mensagem += `<td class='green'>${linha},${coluna}</td>`;            
+                }
+                else{
+                    mensagem += `<td class='yellow'>${linha},${coluna}</td>`;
+                }
+            }
+            mensagem += "</tr>";
+        }
+        tbody.innerHTML += mensagem;
+         
+    }
+</script>

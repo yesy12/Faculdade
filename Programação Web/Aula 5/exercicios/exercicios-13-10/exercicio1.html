@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <style>
+        body{
+            display: flex;
+            width: 90%;
+            align-items: center;
+            justify-content: center;
+        }
+        table{
+            color: #ccc;
+            background-color: #ccc;
+            
+        }
+        td, th{
+            padding: 10px;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+        }
+        thead{
+            font-size: 15px;
+            font-weight: 700;
+            background-color: #003;
+        }
+        tbody tr td{
+            font-size: 14px;
+            background-color: #006;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Índice</th>
+            <th>Nome</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    window.onload = () =>{
+        let arrayNome = [];
+        let sair = false;
+        let nome;
+        let tbody = document.getElementsByTagName("tbody")[0];
+        let mensagem = "";
+
+        while(sair == false){
+            nome = prompt("Digite um nome: ");
+
+            if(nome == null){
+                sair = true;
+                mensagem = "";
+            } 
+            else{
+                arrayNome.push(nome);
+            }
+
+                for(let i = 0; i < arrayNome.length;i++){
+                    mensagem += "<tr>";
+                    mensagem += `<td> ${i+1}</td>`;
+                    mensagem += `<td> ${arrayNome[i]}</td>`;
+                    mensagem += "</tr>";
+        
+                }
+                tbody.innerHTML = mensagem;
+                
+                // arrayNome.forEach(nomeSingle => {
+                // })
+            
+        }
+
+    }
+</script>

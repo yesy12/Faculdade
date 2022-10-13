@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio Slide 23</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    perdeu = false; //
+    partida = 1;//
+    ponto =  0;
+    while(perdeu == false){//
+
+        dados1 = Math.floor(Math.random()*7);//
+        dados2 = Math.floor(Math.random()*7);//
+        soma = dados1 + dados2;//
+
+        document.write(`A soma dos seus dados deu: ${soma}<br>`);//
+
+        if(partida == 1){//
+            document.write("<br>Vamos Jogar<br>")//
+            if(soma == 7 || soma == 11){//
+                perdeu = true;//
+                document.write("<p style='color:green'>Você ganhou o jogo</p><br>");//
+            }//
+            else if(soma == 2 || soma == 3 || soma == 12){//
+                perdeu = true;//
+                document.write("<p style='color:red'>Você perdeu o jogo</p><br>");//
+            }//
+            else{//
+                document.write("<p style='color:blue'>Ainda não aconteceu nada</p><br>");//
+                ponto = soma;//
+            }//
+        }//
+        else{//
+            document.write("<br>Vamos Jogar De novo<br>")
+            if(soma == 7){
+                perdeu = true;
+                document.write("<p style='color:red'>Você perdeu o jogo</p><br>");
+            }
+            else if(soma == ponto){
+                perdeu = true;
+                document.write("<p style='color:green'>Você ganhou o jogo</p><br>");
+            }
+            else{
+                document.write("<p style='color:blue'>Ainda não aconteceu nada</p><br>");
+            }
+        }//
+        partida+=1;//
+
+    }
+
+
+
+
+</script>
