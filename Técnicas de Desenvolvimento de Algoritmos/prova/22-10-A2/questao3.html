@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questao 3</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    n1 = Number(prompt("Digite um número: "));
+    n2 = Number(prompt("Digite outro número: "));
+    n3 = Number(prompt("Digite mais outro número: "));
+    n4 = Number(prompt("Digite o ultimo número: "));
+
+    maior1 = -999999999;
+    maior2 = -999999999;
+
+
+    if(n1 > maior1){
+        maior1 = n1;
+    }
+    if(n2 > maior1){
+        maior1 = n2;
+    }
+    if(n3 > maior1){
+        maior1 = n3;
+    }
+    if(n4 > maior1){
+        maior1 = n4;
+    }
+
+    if(n1 > maior1 && n1 != maior1){
+        maior2 = n1;
+    }
+    if(n2 > maior2 && n2 != maior1){
+        maior2 = n2;
+    }
+    if(n3 > maior2 && n3 != maior1){
+        maior2 = n3;
+    }
+    if(n4 > maior2 && n4 != maior1){
+        maior2 = n4;
+    }
+
+    document.write(`Os Números são: ${n1},${n2},${n3},${n4}<br>`)
+    document.write(`O maior primeiro Número: ${maior1}<br>`)
+    document.write(`O maior segundo Número: ${maior2}`)
+    
+</script>
