@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Questão 2</title>
+		<meta charset="utf-8">
+		<style>
+			div{
+				margin-bottom:10px
+			}
+		</style>
+	</head>
+	<body>
+		<p>Calculadora</p>
+		
+		<form>
+			<div>
+				<label for="primeiroNumero">Primeiro Número</label><br/>
+				<input type="number" id="primeiroNumero" placeholder="Digite um número">
+			</div>
+			
+			<div>
+				<label>Segundo Número</label><br/>
+				<input type="number" id="segundoNumero" placeholder="Digite outro número">
+			</div>
+			
+			<div>
+				<input type="button" id="soma" value="+">	
+				<input type="button" id="subtracao" value="-">
+				<input type="button" id="multiplicacao" value="*">
+				<input type="button" id="divisao" value="/">
+			</div>
+			
+			<div>
+				<label>Resultado</label>
+				<input id="resultado" type="text" disabled>
+			</div>
+			
+		</form>
+	
+	</body>
+<html>
+<script>
+	window.onload = () =>{
+		let soma = document.getElementById("soma");
+		let subtracao = document.getElementById("subtracao");
+		let multiplicacao = document.getElementById("multiplicacao");
+		let divisao = document.getElementById("divisao");
+		let resultado = document.getElementById("resultado");
+		
+		let numero1;
+		let numero2;
+		
+		soma.addEventListener("click",()=>{
+			resultado.value = operacao("+");
+		})
+
+		subtracao.addEventListener("click",()=>{
+			resultado.value = operacao("-");
+		})
+
+		multiplicacao.addEventListener("click",()=>{
+			resultado.value = operacao("*");
+		})		
+		
+		divisao.addEventListener("click",()=>{
+			resultado.value = operacao("/");
+		})		
+		
+		function operacao(parametro){
+			numero1 = Number(document.getElementById("primeiroNumero").value);
+			numero2 = Number(document.getElementById("segundoNumero").value);
+		
+			if(parametro == "+"){
+				return numero1 + numero2;
+			} 
+			else if(parametro == "-"){
+				return numero1 - numero2;
+			}
+			else if(parametro == "*"){
+				return numero1 * numero2;
+			}			
+			else if(parametro == "/"){
+				return numero1 / numero2;
+			}			
+		}
+		
+	}
+	
+	
+</script>

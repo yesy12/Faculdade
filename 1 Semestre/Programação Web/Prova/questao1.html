@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title>Questão 1</title>
+		
+		<style>
+			div{
+				margin-bottom:10px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Acréscimo de Salário</p>
+		<form>
+			<div>
+				<label for="salario">Salário Bruto</label>
+				<input type="number" id="salario" placeholder="Digite um salario">
+			</div>
+
+			<div>
+				<label for="categoria">Categória</label>
+				<select id="categoria">
+					<option value="a">Categoria A</option>
+					<option value="b">Categoria B</option>
+					<option value="c">Categoria C</option>
+			  </select>
+			</div>
+			
+			<div>
+				<input type="button" value="Calcular" id="calcular">
+			</div>
+			
+			<div>
+				<label>Salário com Bônus</label>
+				<input type="text" id="resultado" placeholder="" disabled>
+			</div>
+			
+			<div>
+				<label>Percentual do Bônus</label>
+				<input type="text" id="bonus" placeholder="" disabled>
+			</div>
+		</form>
+	</body>
+</html>
+<script>
+	window.onload = () =>{
+		let calcular = document.getElementById("calcular");
+		let resultado = document.getElementById("resultado");
+		let bonus = document.getElementById("bonus");
+		
+		let salario;
+		let novoSalario;
+		let categoria;
+		let aumento = 0;
+		
+		calcular.addEventListener("click",()=>{
+			salario = Number(document.getElementById("salario").value);
+			categoria = document.getElementById("categoria").value;
+			
+			if(categoria == "a"){
+				aumento = 0.25;
+			}
+			else if(categoria == "b"){
+				aumento = 0.20;
+			}
+			else if(categoria == "c"){
+				aumento = 0.10;
+			}		
+			novoSalario = salario * (aumento + 1);
+			resultado.value = `R$ ${novoSalario.toFixed(2)}`;
+			bonus.value = `O valor do Bônus foi ${aumento*100}%`
+		})
+	
+	}
+</script>

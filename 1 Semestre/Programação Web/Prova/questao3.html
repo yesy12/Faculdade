@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Questão 3</title>
+		<meta charset="utf-8">
+		<style>
+			div{
+				margin-bottom:10px
+			}
+			.yellow{
+				background-color: yellow;
+			}
+			.green{
+				background-color: green;
+			}
+			.red{
+				background-color: red;
+			}
+			table{
+				border:2px solid black;
+			}
+			td{
+				border:1px solid black;
+				
+
+			}
+		</style>
+	</head>
+	<body>
+		<p>Joga Dados</p>
+		
+		<form>
+			<p> Criar Tabela:</p>
+			<div>
+				<label for="d1">D1</label>
+				<input type="number" id="d1" autofocus min=1 max=6> &nbsp; 
+				
+				<label for="d2">D2</label>
+				<input type="number" id="d2" min=1 max=10>
+			</div>
+			
+			<div>
+				<input type="button" id="criarTabela" value="Criar Tabela">
+			</div>
+		</form>
+		
+		<div id="tabela">
+		
+		</div>
+	</body>
+</html>
+<script src="questao3.js"></script>
