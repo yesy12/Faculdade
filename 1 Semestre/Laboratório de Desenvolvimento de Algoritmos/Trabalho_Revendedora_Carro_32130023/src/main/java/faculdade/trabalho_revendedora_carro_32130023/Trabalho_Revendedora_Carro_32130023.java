@@ -23,7 +23,7 @@ public class Trabalho_Revendedora_Carro_32130023 {
         
         Carro car01 = new Carro(2017, "Azul", 15620.18f,true, "Toyota");
         Carro car02 = new Carro(2018, "Preto", 35670.00f,false, "Ford");      
-        Carro car03 = new Carro(2018, "Cinza", 1570.85f,false, "Honda");
+        Carro car03 = new Carro(2018, "Cinza", 15070.85f,false, "Honda");
         
         Carro car04 = new Carro(2019, "Vermelho", 10202.24f,true, "Ford");       
         Carro car05 = new Carro(2019, "Amarelo", 10353.00f,true, "Fiat");
@@ -60,7 +60,7 @@ public class Trabalho_Revendedora_Carro_32130023 {
         for(int indice = 0; indice < carrosArray.length; indice++){                    
             carAtual = carrosArray[indice];                                 
             
-            if(carAtual.getAnoModelo() > 2020 && carAtual.getValorReajustado() > 100000 && carAtual.getValor() >= 100000){                
+            if(carAtual.getAnoModelo() > 2020 && carAtual.getValorReajustado() > 100000){                
                 quantidadeValorReajustado+=1;
                 mensagemReajustada += "\t"+quantidadeValorReajustado+"\t"  +carAtual.getAnoModelo()+"\t" +carAtual.getCor()+"\tR$: " +carAtual.getValorReajustado()+"\t    " 
                         +carAtual.getSituacaoFinanciamento()+"\t" +carAtual.getMarcaModelo();                                                              
