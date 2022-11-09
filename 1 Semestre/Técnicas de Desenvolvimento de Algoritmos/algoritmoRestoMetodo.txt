@@ -1,0 +1,18 @@
+Inicio
+    inteiro n1, n2;
+
+    escreva("Digite o primeiro Número, o que sera dividido: ");
+    n1 = leia;
+
+    escreva("Digite o segundo Número, o que irá dividir: ");
+    n2 = leia;
+
+    escreva("O resto da divisao de " +n1 +" por " +n2 + " é igual a " +restoSemModulo(n1,n2) ); 
+
+    funcao inteiro restoSemModulo(int a, int b){
+        inteiro temp;
+        temp = a/b;
+        return (a - (temp * b));
+    }
+
+Fim

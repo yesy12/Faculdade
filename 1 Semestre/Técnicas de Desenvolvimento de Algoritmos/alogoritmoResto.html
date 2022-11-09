@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RESTO DE DIVISAO</title>
+        <meta charset="utf-8">
+    </head>
+    <body></body>
+</html>
+<script>
+    window.onload = () => {
+        n1 = prompt("Digite o primeiro numero");
+        n2 = prompt("Digite o segundo numero");
+
+        document.write(`Resto é ${restoSemModulo(n1,n2)}`);
+
+        function restoSemModulo(a,b){ 
+
+            let temp = 1;
+
+            temp = Math.floor(a/b);
+
+            console.log(temp);
+            console.log(temp * b);
+
+            return (n1 - (temp * b));
+                
+        }
+
+
+    }
+</script>
